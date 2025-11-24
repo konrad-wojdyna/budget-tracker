@@ -69,8 +69,6 @@ That's it! No build process needed.
 
 ## 👤 Author
 
-**Your Name**
-
 - GitHub: [@konrad-wojdyna](https://github.com/konrad-wojdyna)
 
 ## 📝 License
