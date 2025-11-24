@@ -1,0 +1,231 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary colors */
+  --primary: #fcf9fe;
+  --primary-dark: #5568d3;
+  --btn-primary: #8038e9;
+  --btn-primary__hover: ;
+  --card-bg: #eef0ff;
+  --success: #48bb78;
+  --danger: #f56565;
+  --warning: #ed8936;
+
+  /* Kategorie */
+  --food: #f6ad55;
+  --transport: #0a9854;
+  --entertainment: #3f2a69;
+  --other: #a0aec0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary);
+}
+
+/* GLOBALS */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+select {
+  cursor: pointer;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+section {
+  margin: 1rem 0;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#container {
+  padding: 0.5rem;
+}
+
+/* HEADER */
+.header {
+}
+
+.header .company-name {
+  font-size: 1.5rem;
+}
+
+.header .hero-text {
+  font-size: 1.2rem;
+}
+
+/* EXPENSE FORM */
+.add-expense-form {
+  margin: 1rem 0;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.expense-form__title {
+  letter-spacing: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.expense-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expense-form__row label {
+  font-weight: 500;
+}
+
+.expense-form input,
+select {
+  padding: 0.45rem;
+  border: none;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+.success {
+  border: 1px solid black;
+  padding: 0.45rem;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  display: none;
+  transition: 0.3s ease-out all;
+}
+
+.expense-form__btn--submit {
+  margin-top: 1rem;
+  padding: 0.45rem;
+  border-radius: 0.25rem;
+  background-color: var(--btn-primary);
+  color: white;
+  font-size: 1.05rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  transition: 0.3s linear;
+}
+
+.expense-form__btn--submit:hover {
+  background-color: #54249d;
+}
+
+.error-validation {
+  display: none;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: red;
+  color: white;
+}
+
+.show {
+  display: block;
+}
+
+/* STATISTICS */
+.statistics__container {
+  display: grid;
+  gap: 1rem;
+}
+
+.statistics-card {
+  background-color: var(--card-bg);
+  height: 5rem;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.statistics-card p:first-child {
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+}
+
+.statistics-card:nth-child(2) {
+  color: var(--food);
+}
+
+.statistics-card:nth-child(3) {
+  color: var(--transport);
+}
+
+.statistics-card:nth-child(4) {
+  color: var(--entertainment);
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.amount-expenses {
+  text-decoration: underline;
+}
+
+.expnses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expenses-list__item {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr;
+  border-bottom: 1px solid;
+}
+
+/* FOOTER */
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--primary-dark);
+  padding: 0.45rem;
+}
+
+@media screen and (min-width: 768px) {
+  .statistics__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .statistics__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

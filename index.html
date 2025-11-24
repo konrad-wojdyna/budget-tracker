@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- js -->
+    <script src="./src/app.js" type="module" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <header class="header">
+        <h1 class="company-name">💰BudgetTracker</h1>
+        <p class="hero-text">Śledź swoje wydatki</p>
+      </header>
+      <main id="main">
+        <section class="add-expense-form">
+          <form class="expense-form">
+            <h2 class="expense-form__title">DODAJ WYDATEK</h2>
+            <div class="expense-form__row">
+              <label for="name">Nazwa:</label>
+              <input type="text" id="name" name="name" />
+              <div class="error-validation" data-error="name"></div>
+            </div>
+            <div class="expense-form__row">
+              <label for="amount">Kwota: (PLN)</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="0"
+                value="0"
+              />
+              <div class="error-validation" data-error="amount"></div>
+            </div>
+            <div class="expense-form__row">
+              <label for="category">Kategoria:</label>
+              <select name="category" id="category">
+                <option value="jedzenie">Jedzenie</option>
+                <option value="transport">Transport</option>
+                <option value="rozrywka">Rozrywka</option>
+                <option value="inne">Inne</option>
+              </select>
+            </div>
+            <div class="expense-form__row">
+              <label for="date">Data:</label>
+              <input type="date" id="date" name="date" />
+              <div class="error-validation" data-error="date"></div>
+            </div>
+            <div class="success">Wydatek dodany do listy!</div>
+            <button class="expense-form__btn--submit" type="submit">
+              DODAJ WYDATEK
+            </button>
+          </form>
+        </section>
+        <section class="statistics">
+          <h2 class="section-title">STATYSTYKI</h2>
+          <div class="statistics__container">
+            <article class="statistics-card" data-id="total">
+              <p>ŁĄCZNIE</p>
+              <p class="amount">0zł</p>
+            </article>
+            <article class="statistics-card" data-id="jedzenie">
+              <p>JEDZENIE</p>
+              <p class="amount">0zł</p>
+            </article>
+            <article class="statistics-card" data-id="transport">
+              <p>TRANSPORT</p>
+              <p class="amount">0zł</p>
+            </article>
+            <article class="statistics-card" data-id="rozrywka">
+              <p>ROZRYWKA</p>
+              <p class="amount">0zł</p>
+            </article>
+            <article class="statistics-card" data-id="inne">
+              <p>INNE</p>
+              <p class="amount">0zł</p>
+            </article>
+          </div>
+        </section>
+        <section class="filters">
+          <nav class="filters--navbar">
+            <label class="section-title" for="filter">FILTR:</label>
+            <select name="filter" id="filter">
+              <option value="all">Wszystkie kategorie</option>
+              <option value="jedzenie">Jedzenie</option>
+              <option value="transport">Transport</option>
+              <option value="rozrywka">Rozrywka</option>
+              <option value="inne">Inne</option>
+            </select>
+            <p class="amount-expenses">0 wydatków</p>
+          </nav>
+          <ul class="expenses-list"></ul>
+        </section>
+      </main>
+      <footer id="footer">
+        <p class="company-name">💰BudgetTracker</p>
+        <p>&copy; <span class="year"></span></p>
+      </footer>
+    </div>
+  </body>
+</html>
